@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: client-configmap
+  namespace: {{ .Values.context.namespace }}
+  labels:
+    app.kubernetes.io/name: client-env-configmap
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+data:
+  SOME_ENV: "some value"
+

@@ -1,0 +1,7 @@
+version: "3.7"
+
+services:
+  client:
+    image: hakimix/xbr-client:latest
+    ports:
+      - "8080:8080"

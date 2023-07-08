@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "NODE_ICU_DATA=node_modules/full-icu nuxt",
     "build": "NODE_ICU_DATA=node_modules/full-icu nuxt build",
-    "start": "nuxt start",
+    "start": "NODE_OPTIONS=--max-http-header-size=32768 NODE_ICU_DATA=node_modules/full-icu nuxt start",
     "generate": "nuxt generate",
-    "test": "jest"
+    "test": "jest",
+    "docker:build": "docker build -t hakimix/xbr-client .",
+    "docker:push": "docker push hakimix/xbr-client:latest"
   },
   "dependencies": {
     "core-js": "^3.25.3",

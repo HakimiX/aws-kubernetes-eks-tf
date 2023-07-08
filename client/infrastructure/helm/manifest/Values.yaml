@@ -1,0 +1,21 @@
+context:
+  namespace: local-dev
+
+image:
+  repository: hakimix/xbr-client
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+autoscaling:
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+resources:
+  requests:
+    memory: 256Mi
+    cpu: '0.25'
+  limits:
+    memory: 512Mi
+    cpu: '1'
+port: 8080
