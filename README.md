@@ -59,3 +59,4 @@ kubens <namespace-name>
 ### Sources
 
 * [amazon-eks-cluster](https://logz.io/blog/amazon-eks-cluster)
+* [Deploy on Kubernetes](https://docs.docker.com/desktop/kubernetes/)
