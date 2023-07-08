@@ -16,12 +16,36 @@ the cluster (starting, stopping, and scheduling containers).
     - [Introduction](#overview)
     - [Sources](#sources)
 
-### Overview
+## Overview
 
-#### Frontend
+### Frontend
 
 The frontend is a simple application that is built with Node.js, TypeScript, Vue3 and Nuxt3.
 
+## Local Development
+
+### Prerequisites
+* [docker-desktop](https://www.docker.com/products/docker-desktop)
+* [kubectl](https://kubernetes.io/docs/tasks/tools/)
+* [kubectx + kubens](https://github.com/ahmetb/kubectx#homebrew-macos-and-linux)
+
+### Working with the cluster locally using docker-desktop
+
+1. Create a new namespace using the following command:
+```shell
+kubectl create namespace <namespace-name>
+```
+> Note: Replace `<namespace-name>` with the name of your namespace and update the `/infrastructure/helm/config/local.yaml`file with the name of your namespace.
+
+Confirm that the namesapce was created successfully by running the following command:
+```shell
+kubectl get namespaces
+```
+
+2. Use `kubens` to set the namespace as the default namespace for the current context:
+```shell
+kubens <namespace-name>
+```
 
 ### Sources
 
